@@ -2,7 +2,16 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, FlatList } from "react-native";
 import RestaurantItem from "./src/components/RestaurantItem";
 import restaurants from "./assets/data/restaurants.json";
+import { useFonts } from "expo-font";
 export default function App() {
+  const [loaded] = useFonts({
+    Satoshi: require("./assets/fonts/Satoshi-Black.otf"),
+  });
+
+  if (!loaded) {
+    return null;
+  }
+
   return (
     <View style={styles.container}>
       {/*Restaraunt Items*/}
@@ -25,6 +34,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     padding: 10,
+    fontFamily: "Satoshi-Black",
   },
   restaurantContainer: {
     wide: "100%", //change to width if following tutorial
@@ -37,7 +47,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 18,
-    //fontFamily: 'sans-serif',
+    fontFamily: "serif",
     fontWeight: "500",
     marginVertical: 5,
   },
