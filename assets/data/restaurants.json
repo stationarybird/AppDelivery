@@ -1,6 +1,6 @@
 [{
   "id": "1",
-  "name": "Torchy's Tacos",
+  "name": "Whole Foods Market",
   "deliveryFee": 1.40,
   "minDeliveryTime": 25,
   "maxDeliveryTime": 35,
@@ -37,7 +37,7 @@
   ]
 }, {
   "id": "2",
-  "name": "Keep Austin Fed",
+  "name": "JD's Market",
   "deliveryFee": 0.40,
   "minDeliveryTime": 25,
   "maxDeliveryTime": 35,

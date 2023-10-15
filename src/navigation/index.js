@@ -59,20 +59,21 @@ const HomeStack = createNativeStackNavigator();
 
 const HomeStackNavigator = () => {
   return (
-    <HomeStack.Navigator>
-      <HomeStack.Screen name="Restaurants" component={HomeScreen} />
-      <HomeStack.Screen name="Restaurant" component={RestaurantDetailsScreen} />
-      <HomeStack.Screen name="Dish" component={DishDetailsScreen} />
+    <HomeStack.Navigator screenOptions={{ headerTitleAlign: 'center' }}>
+      <HomeStack.Screen name="Available Vendors" component={HomeScreen} />
+      <HomeStack.Screen name="Vendor" component={RestaurantDetailsScreen} />
+      <HomeStack.Screen name="Produce" component={DishDetailsScreen} />
       <HomeStack.Screen name="Basket" component={Basket} />
     </HomeStack.Navigator>
   );
 };
 
+
 const OrdersStack = createNativeStackNavigator();
 
 const OrderStackNavigator = () => {
   return (
-    <OrdersStack.Navigator>
+    <OrdersStack.Navigator screenOptions={{ headerTitleAlign: 'center' }}>
       <OrdersStack.Screen name="Orders" component={OrdersScreen} />
       <OrdersStack.Screen name="Order" component={OrderDetails} />
     </OrdersStack.Navigator>

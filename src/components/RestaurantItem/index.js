@@ -5,7 +5,7 @@ const RestaurantItem = ({ restaurant }) => {
   const navigation = useNavigation();
 
   const onPress = () => {
-    navigation.navigate("Restaurant", { id: restaurant.id });
+    navigation.navigate("Vendor", { id: restaurant.id });
   };
 
   return (
