@@ -1,43 +1,68 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, Pressable } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 const RestaurantItem = ({ restaurant }) => {
+  const navigation = useNavigation();
+
+  const onPress = () => {
+    navigation.navigate("Restaurant", { id: restaurant.id });
+  };
+
   return (
-    <View style={styles.restaurantContainer}>
+    <Pressable onPress={onPress} style={styles.restaurantContainer}>
       <Image
         source={{
           uri: restaurant.image,
         }}
         style={styles.image}
       />
-      <Text style={styles.title}>{restaurant.name}</Text>
-      <Text style={styles.subtitle}>
-        {restaurant.minDeliveryTime}-{restaurant.maxDeliveryTime} minutes
-      </Text>
-    </View>
+      <View style={styles.row}>
+        <View>
+          <Text style={styles.title}>{restaurant.name}</Text>
+          <Text style={styles.subtitle}>
+            {restaurant.minDeliveryTime}-{restaurant.maxDeliveryTime} minutes
+          </Text>
+        </View>
+
+        <View style={styles.rating}>
+          <Text>{restaurant.rating}</Text>
+        </View>
+      </View>
+    </Pressable>
   );
 };
+
 export default RestaurantItem;
 
 const styles = StyleSheet.create({
   restaurantContainer: {
-    wide: "100%", //change to width if following tutorial
+    width: "100%",
     marginVertical: 10,
   },
   image: {
-    width: 300,
+    width: "100%",
     aspectRatio: 5 / 3,
     marginBottom: 5,
   },
   title: {
-    fontSize: 18,
-    //fontFamily: 'sans-serif',
+    fontSize: 16,
     fontWeight: "500",
     marginVertical: 5,
   },
   subtitle: {
     color: "grey",
-    fontSize: 14,
-    fontWeight: "light",
+  },
+  row: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  rating: {
+    marginLeft: "auto",
+    backgroundColor: "lightgray",
+    width: 30,
+    height: 30,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 20,
   },
 });
