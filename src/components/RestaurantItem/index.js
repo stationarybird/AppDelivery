@@ -1,13 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, Image } from "react-native";
-import { useFonts } from "expo-font";
-const [loaded] = useFonts({
-  Satoshi: require("./assets/fonts/Satoshi-Black.otf"),
-});
 
-if (!loaded) {
-  return null;
-}
 const RestaurantItem = ({ restaurant }) => {
   return (
     <View style={styles.restaurantContainer}>
@@ -38,7 +31,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 18,
-    fontFamily: "Satoshi-Black",
+    fontFamily: "sans-serif",
     fontWeight: "500",
     marginVertical: 5,
   },
