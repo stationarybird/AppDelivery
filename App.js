@@ -1,8 +1,9 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, FlatList } from "react-native";
-import RestaurantItem from "./src/components/RestaurantItem";
-import restaurants from "./assets/data/restaurants.json";
-import { useFonts } from "expo-font";
+import { StyleSheet, View } from "react-native";
+import RootNavigator from "./src/navigation";
+
+import { NavigationContainer } from "@react-navigation/native";
+
 export default function App() {
   const [loaded] = useFonts({
     Satoshi: require("./assets/fonts/Satoshi-Black.otf"),
@@ -13,47 +14,10 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
-      {/*Restaraunt Items*/}
-      {/* <RestaurantItem restaurant={restaurants[0]} />
-      <RestaurantItem restaurant={restaurants[1]} /> */}
+    <NavigationContainer>
+      <RootNavigator />
 
-      <FlatList
-        data={restaurants}
-        renderItem={() => <RestaurantItem restaurant={restaurants[0]} />}
-      />
-      <StatusBar style="auto" />
-    </View>
+      <StatusBar style="light" />
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-    padding: 10,
-    fontFamily: "Satoshi-Black",
-  },
-  restaurantContainer: {
-    wide: "100%", //change to width if following tutorial
-    marginVertical: 10,
-  },
-  image: {
-    width: 300,
-    aspectRatio: 5 / 3,
-    marginBottom: 5,
-  },
-  title: {
-    fontSize: 18,
-    fontFamily: "serif",
-    fontWeight: "500",
-    marginVertical: 5,
-  },
-  subtitle: {
-    color: "grey",
-    fontSize: 14,
-    fontWeight: "light",
-  },
-});
