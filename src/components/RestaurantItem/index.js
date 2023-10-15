@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 18,
-    //fontFamily: 'sans-serif',
+    fontFamily: "sans-serif",
     fontWeight: "500",
     marginVertical: 5,
   },
