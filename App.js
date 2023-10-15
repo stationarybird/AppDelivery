@@ -5,13 +5,6 @@ import RootNavigator from "./src/navigation";
 import { NavigationContainer } from "@react-navigation/native";
 
 export default function App() {
-  const [loaded] = useFonts({
-    Satoshi: require("./assets/fonts/Satoshi-Black.otf"),
-  });
-
-  if (!loaded) {
-    return null;
-  }
 
   return (
     <NavigationContainer>
