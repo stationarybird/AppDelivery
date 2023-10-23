@@ -1,4 +1,5 @@
-[{
+[
+  {
   "id": "1",
   "name": "Whole Foods Market",
   "deliveryFee": 1.40,
@@ -35,7 +36,8 @@
       "price": 7.90
     }
   ]
-}, {
+}, 
+{
   "id": "2",
   "name": "JD's Market",
   "deliveryFee": 0.40,
@@ -73,7 +75,7 @@
   ]
 }, {
   "id": "3",
-  "name": "Menchi's",
+  "name": "Central Market",
   "deliveryFee": 1.40,
   "minDeliveryTime": 20,
   "maxDeliveryTime": 30,
@@ -106,9 +108,10 @@
       "price": 5.20     
     }
   ]
-}, {
+}, 
+{
   "id": "4",
-  "name": "Central Texas Food Bank",
+  "name": "99 Ranch",
   "deliveryFee": 0.90,
   "minDeliveryTime": 30,
   "maxDeliveryTime": 40,
@@ -142,9 +145,10 @@
     }
   ]
 },
+
 {
   "id": "5",
-  "name": "Bouldin Creek Cafe",
+  "name": "Man Pasand Supermarket",
   "deliveryFee": 0.90,
   "minDeliveryTime": 30,
   "maxDeliveryTime": 40,
@@ -176,6 +180,56 @@
       "description": "Green sprouts, pieces of grilled bacon, chicken delicacies, grated Parmesan, muffin croutons and fried onion confetti dressed with Caesar sauce.",
       "price": 10.50     
     }
+    
   ]
-}
+},
+
+
+  {
+    "id": "6",
+    "name": "Whole Foods Market1",
+    "deliveryFee": 1.40,
+    "minDeliveryTime": 25,
+    "maxDeliveryTime": 35,
+    "rating": 4.0,
+    "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/uber-eats/restaurant1.jpeg",
+    "dishes": [
+      {
+        "name": "Organic Green Lentils",
+        "description": "Aurora Products Organic Green Lentils, 22 OZ.",
+        "price": 12.99
+      },
+      {
+        "name": "Organic Sugar",
+        "description": "365 By Whole Foods Market, Organic Sugar, 32 Ounce.",
+        "price": 5.49
+      },
+      {
+        "name": "Organic Buffalo Wing Sauce",
+        "description": "365 By Whole Foods Market Organic Buffalo Wing Sauce, 12 Ounce.",
+        "price": 6.41
+      }
+    ]
+  },
+  {
+    "id": "7",
+    "name": "Man Pasand Supermarket2",
+    "deliveryFee": 0.40,
+    "minDeliveryTime": 25,
+    "maxDeliveryTime": 35,
+    "rating": 4.7,
+    "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/uber-eats/restaurant2.jpeg",
+    "dishes": [
+      {
+        "name": "Cajun Ribs",
+        "description": "",
+        "price": 18.95
+      },
+      {
+        "name": "",
+        "description": "",
+        "price": null
+      }
+    ]
+  }
 ]
