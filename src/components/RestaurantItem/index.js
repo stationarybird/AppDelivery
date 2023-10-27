@@ -1,68 +1,83 @@
-import { StyleSheet, Text, View, Image, Pressable } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import { useState, useEffect } from "react";
+import {
+  View,
+  FlatList,
+  ActivityIndicator,
+  Pressable,
+  Text,
+} from "react-native";
+import { Ionicons } from "@expo/vector-icons";
+import DishListItem from "../../components/DishListItem";
+import Header from "./Header";
+import styles from "./styles";
+import { useRoute, useNavigation } from "@react-navigation/native";
+import { DataStore } from "aws-amplify";
+import { Restaurant, Dish } from "../../models";
+import { useBasketContext } from "../../contexts/BasketContext";
 
-const RestaurantItem = ({ restaurant }) => {
+const RestaurantDetailsPage = () => {
+  const [restaurant, setRestaurant] = useState(null);
+  const [dishes, setDishes] = useState([]);
+
+  const route = useRoute();
   const navigation = useNavigation();
 
-  const onPress = () => {
-    navigation.navigate("Vendor", { id: restaurant.id });
-  };
+  const id = route.params?.id;
+
+  const {
+    setRestaurant: setBasketRestaurant,
+    basket,
+    basketDishes,
+  } = useBasketContext();
+
+  useEffect(() => {
+    if (!id) {
+      return;
+    }
+    setBasketRestaurant(null);
+    // fetch the restaurant with the id
+    DataStore.query(Vendor, id).then(setRestaurant);
+
+    DataStore.query(Dish, (dish) => dish.vendorId("eq", id)).then(
+      setDishes
+    );
+  }, [id]);
+
+  useEffect(() => {
+    setBasketRestaurant(restaurant);
+  }, [restaurant]);
+
+  if (!restaurant) {
+    return <ActivityIndicator size={"large"} color="gray" />;
+  }
 
   return (
-    <Pressable onPress={onPress} style={styles.restaurantContainer}>
-      <Image
-        source={{
-          uri: restaurant.image,
-        }}
-        style={styles.image}
+    <View style={styles.page}>
+      <FlatList
+        ListHeaderComponent={() => <Header restaurant={restaurant} />}
+        data={dishes}
+        renderItem={({ item }) => <DishListItem dish={item} />}
+        keyExtractor={(item) => item.name}
       />
-      <View style={styles.row}>
-        <View>
-          <Text style={styles.title}>{restaurant.name}</Text>
-          <Text style={styles.subtitle}>
-            {restaurant.minDeliveryTime}-{restaurant.maxDeliveryTime} minutes
+      <Ionicons
+        onPress={() => navigation.goBack()}
+        name="arrow-back-circle"
+        size={45}
+        color="white"
+        style={styles.iconContainer}
+      />
+      {basket && (
+        <Pressable
+          onPress={() => navigation.navigate("Basket")}
+          style={styles.button}
+        >
+          <Text style={styles.buttonText}>
+            Open basket ({basketDishes.length})
           </Text>
-        </View>
-
-        <View style={styles.rating}>
-          <Text>{restaurant.rating}</Text>
-        </View>
-      </View>
-    </Pressable>
+        </Pressable>
+      )}
+    </View>
   );
 };
 
-export default RestaurantItem;
-
-const styles = StyleSheet.create({
-  restaurantContainer: {
-    width: "100%",
-    marginVertical: 10,
-  },
-  image: {
-    width: "100%",
-    aspectRatio: 5 / 3,
-    marginBottom: 5,
-  },
-  title: {
-    fontSize: 16,
-    fontWeight: "500",
-    marginVertical: 5,
-  },
-  subtitle: {
-    color: "grey",
-  },
-  row: {
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  rating: {
-    marginLeft: "auto",
-    backgroundColor: "lightgray",
-    width: 30,
-    height: 30,
-    alignItems: "center",
-    justifyContent: "center",
-    borderRadius: 20,
-  },
-});
+export default RestaurantDetailsPage;

@@ -14,6 +14,9 @@ import CustomHeader from "./src/components/CustomHeader";
 import CustomFooter from "./src/components/CustomFooter";
 import { NavigationContainer } from "@react-navigation/native";
 import config from "./src/aws-exports";
+import AuthContextProvider from "./src/contexts/AuthContext";
+import BasketContextProvider from "./src/contexts/BasketContext";
+
 
 Amplify.configure({ ...config, Analytics: { disabled: true } });
 
@@ -61,22 +64,33 @@ function App() {
         overrides: [defaultDarkModeOverride],
       }}
     >
-      <Authenticator.Provider>
-        <Authenticator
-          Header={CustomHeader}
-          Footer={CustomFooter}
-          formFields={formFields}
-        >
-          <NavigationContainer>
-            <RootNavigator />
-
-            <StatusBar style="light" />
-          </NavigationContainer>
-        </Authenticator>
-      </Authenticator.Provider>
+      <AuthContextProvider>
+        <BasketContextProvider> {/* Add BasketContextProvider here */}
+         <OrderContextProvider>
+            <Authenticator.Provider>
+              <Authenticator
+                Header={CustomHeader}
+                Footer={CustomFooter}
+                formFields={formFields}
+              >
+                <NavigationContainer>
+                  <RootNavigator />
+                  <StatusBar style="light" />
+                </NavigationContainer>
+              </Authenticator>
+            </Authenticator.Provider>
+          </OrderContextProvider>*/ {/* Close OrderContextProvider here */}
+        </BasketContextProvider> {/* Close BasketContextProvider here */}
+      </AuthContextProvider>
     </ThemeProvider>
   );
 }
+
+
+
+
+
+
 
 const style = StyleSheet.create({
   container: {
