@@ -1,83 +1,74 @@
-import { useState, useEffect } from "react";
-import {
-  View,
-  FlatList,
-  ActivityIndicator,
-  Pressable,
-  Text,
-} from "react-native";
-import { Ionicons } from "@expo/vector-icons";
-import DishListItem from "../../components/DishListItem";
-import Header from "./Header";
-import styles from "./styles";
-import { useRoute, useNavigation } from "@react-navigation/native";
-import { DataStore } from "aws-amplify";
-import { Restaurant, Dish } from "../../models";
-import { useBasketContext } from "../../contexts/BasketContext";
+import { StyleSheet, Text, View, Image, Pressable } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
-const RestaurantDetailsPage = () => {
-  const [restaurant, setRestaurant] = useState(null);
-  const [dishes, setDishes] = useState([]);
+const DEFAULT_IMAGE =
+  "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/uber-eats/restaurant1.jpeg";
 
-  const route = useRoute();
+const RestaurantItem = ({ restaurant }) => {
   const navigation = useNavigation();
 
-  const id = route.params?.id;
-
-  const {
-    setRestaurant: setBasketRestaurant,
-    basket,
-    basketDishes,
-  } = useBasketContext();
-
-  useEffect(() => {
-    if (!id) {
-      return;
-    }
-    setBasketRestaurant(null);
-    // fetch the restaurant with the id
-    DataStore.query(Vendor, id).then(setRestaurant);
-
-    DataStore.query(Dish, (dish) => dish.vendorId("eq", id)).then(
-      setDishes
-    );
-  }, [id]);
-
-  useEffect(() => {
-    setBasketRestaurant(restaurant);
-  }, [restaurant]);
-
-  if (!restaurant) {
-    return <ActivityIndicator size={"large"} color="gray" />;
-  }
+  const onPress = () => {
+    navigation.navigate("Restaurant", { id: restaurant.id });
+  };
 
   return (
-    <View style={styles.page}>
-      <FlatList
-        ListHeaderComponent={() => <Header restaurant={restaurant} />}
-        data={dishes}
-        renderItem={({ item }) => <DishListItem dish={item} />}
-        keyExtractor={(item) => item.name}
+    <Pressable onPress={onPress} style={styles.restaurantContainer}>
+      <Image
+        source={{
+          uri: restaurant.image.startsWith("http")
+            ? restaurant.image
+            : DEFAULT_IMAGE,
+        }}
+        style={styles.image}
       />
-      <Ionicons
-        onPress={() => navigation.goBack()}
-        name="arrow-back-circle"
-        size={45}
-        color="white"
-        style={styles.iconContainer}
-      />
-      {basket && (
-        <Pressable
-          onPress={() => navigation.navigate("Basket")}
-          style={styles.button}
-        >
-          <Text style={styles.buttonText}>
-            Open basket ({basketDishes.length})
+      <View style={styles.row}>
+        <View>
+          <Text style={styles.title}>{restaurant.name}</Text>
+          <Text style={styles.subtitle}>
+            $ {restaurant.deliveryFee.toFixed(1)} &#8226;{" "}
+            {restaurant.minDeliveryTime}-{restaurant.maxDeliveryTime} minutes
           </Text>
-        </Pressable>
-      )}
-    </View>
+        </View>
+
+        <View style={styles.rating}>
+          <Text>{restaurant.rating.toFixed(1)}</Text>
+        </View>
+      </View>
+    </Pressable>
   );
 };
 
-export default RestaurantDetailsPage;
+export default RestaurantItem;
+
+const styles = StyleSheet.create({
+  restaurantContainer: {
+    width: "100%",
+    marginVertical: 10,
+  },
+  image: {
+    width: "100%",
+    aspectRatio: 5 / 3,
+    marginBottom: 5,
+  },
+  title: {
+    fontSize: 16,
+    fontWeight: "500",
+    marginVertical: 5,
+  },
+  subtitle: {
+    color: "grey",
+  },
+  row: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  rating: {
+    marginLeft: "auto",
+    backgroundColor: "lightgray",
+    width: 30,
+    height: 30,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 20,
+  },
+});

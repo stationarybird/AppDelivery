@@ -38,7 +38,7 @@ const RestaurantDetailsPage = () => {
     // fetch the restaurant with the id
     DataStore.query(Restaurant, id).then(setRestaurant);
 
-    DataStore.query(Dish, (dish) => dish.vendorID("eq", id)).then(
+    DataStore.query(Dish, (dish) => dish.restaurantID("eq", id)).then(
       setDishes
     );
   }, [id]);
