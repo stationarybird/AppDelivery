@@ -18,10 +18,17 @@ const BasketContextProvider = ({ children }) => {
   );
 
   useEffect(() => {
-    DataStore.query(Basket, (b) => b.restaurantID.eq(id)).then((baskets) =>
-      setBasket(baskets[0])
-    );
+    (async () => {
+      if (restaurant && dbUser) {
+        const baskets = await DataStore.query(Basket, (b) =>
+          b.restaurantID("eq", restaurant.id).userID("eq", dbUser.id)
+          
+        );
+        setBasket(baskets[0]);
+      }
+    })();
   }, [dbUser, restaurant]);
+  
 
   useEffect(() => {
     if (basket) {

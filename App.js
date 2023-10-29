@@ -1,37 +1,49 @@
 import '@azure/core-asynciterator-polyfill';
 
-import { StatusBar } from "expo-status-bar";
-import RootNavigator from "./src/navigation";
 
-import { NavigationContainer } from "@react-navigation/native";
-import { Amplify } from "aws-amplify";
-import { withAuthenticator } from "aws-amplify-react-native";
+import React from 'react';
+import { useColorScheme } from 'react-native';
+
+import {
+  Authenticator,
+  defaultDarkModeOverride,
+  ThemeProvider,
+} from '@aws-amplify/ui-react-native';
+import { Amplify } from 'aws-amplify';
+
 import config from "./src/aws-exports";
-import AuthContextProvider from "./src/contexts/AuthContext";
-import BasketContextProvider from "./src/contexts/BasketContext";
-import OrderContextProvider from "./src/contexts/OrderContext";
 
-Amplify.configure({
-  ...config,
-  Analytics: {
-    disabled: true,
-  },
-});
+Amplify.configure(config);
 
 function App() {
+  const colorMode = useColorScheme();
   return (
-    <NavigationContainer>
-      <AuthContextProvider>
-        <BasketContextProvider>
-          <OrderContextProvider>
-            <RootNavigator />
-          </OrderContextProvider>
-        </BasketContextProvider>
-      </AuthContextProvider>
-
-      <StatusBar style="light" />
-    </NavigationContainer>
+    <ThemeProvider
+      colorMode={colorMode}
+      theme={{
+        tokens: {
+          colors: {
+            brand: {
+              primary: {
+                10: '{colors.pink.10}',
+                20: '{colors.pink.20}',
+                40: '{colors.pink.40}',
+                60: '{colors.pink.60}',
+                80: '{colors.pink.80}',
+                90: '{colors.pink.90}',
+                100: '{colors.pink.100}',
+              },
+            },
+          },
+        },
+        overrides: [defaultDarkModeOverride],
+      }}
+    >
+      <Authenticator.Provider>
+        <Authenticator />
+      </Authenticator.Provider>
+    </ThemeProvider>
   );
 }
 
-export default withAuthenticator(App);
+export default App;
