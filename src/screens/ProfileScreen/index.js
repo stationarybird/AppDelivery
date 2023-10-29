@@ -85,11 +85,12 @@ const Profile = () => {
         style={styles.input}
       />
       <Button onPress={onSave} title="Save" />
-      <Pressable style={styles.button} onPress={() => signOut()}>
-        <Text onPress={() => Auth.signOut()} style={styles.buttonText}>
-          Sign Out
-        </Text>
-      </Pressable>
+      <Text
+        onPress={() => Auth.signOut()}
+        style={{ textAlign: "center", color: "red", margin: 10 }}
+      >
+        Sign out
+      </Text>
     </SafeAreaView>
   );
 };
@@ -106,17 +107,6 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     padding: 15,
     borderRadius: 5,
-  },
-  button: {
-    marginTop: 50,
-    backgroundColor: "#B00020",
-    padding: 10,
-    borderRadius: 6,
-  },
-  buttonText: {
-    color: "#fff",
-    fontSize: 18,
-    textAlign: "center",
   },
 });
 

@@ -4,7 +4,7 @@ import { Text, View, StyleSheet } from 'react-native';
 const CustomFooter = () => {
   return (
     <View style={styles.footerContainer}>
-      <Text style={styles.footerText}>Reuce. Refeed. FoodCycle.</Text>
+      <Text style={styles.footerText}>Reuse. Refeed. FoodCycle.</Text>
     </View>
   );
 };

@@ -7,9 +7,9 @@ import Basket from "../screens/Basket";
 import OrdersScreen from "../screens/OrdersScreen";
 import OrderDetails from "../screens/OrderDetails";
 import ProfileScreen from "../screens/ProfileScreen";
+import { useAuthContext } from "../contexts/AuthContext";
 
 import { Foundation, FontAwesome5, MaterialIcons } from "@expo/vector-icons";
-import { useAuthContext } from "../contexts/AuthContext";
 
 const Stack = createNativeStackNavigator();
 
@@ -70,14 +70,14 @@ const HomeStack = createNativeStackNavigator();
 
 const HomeStackNavigator = () => {
   return (
-    <HomeStack.Navigator screenOptions={{ headerTitleAlign: "center" }}>
-      <HomeStack.Screen name="Available Vendors" component={HomeScreen} />
+    <HomeStack.Navigator>
+      <HomeStack.Screen name="Vendor" component={HomeScreen} />
       <HomeStack.Screen
-        name="Vendor"
+        name="Restaurant"
         component={RestaurantDetailsScreen}
         options={{ headerShown: false }}
       />
-      <HomeStack.Screen name="Produce" component={DishDetailsScreen} />
+      <HomeStack.Screen name="Dish" component={DishDetailsScreen} />
       <HomeStack.Screen name="Basket" component={Basket} />
     </HomeStack.Navigator>
   );
@@ -87,7 +87,7 @@ const OrdersStack = createNativeStackNavigator();
 
 const OrderStackNavigator = () => {
   return (
-    <OrdersStack.Navigator screenOptions={{ headerTitleAlign: "center" }}>
+    <OrdersStack.Navigator>
       <OrdersStack.Screen name="Orders" component={OrdersScreen} />
       <OrdersStack.Screen name="Order" component={OrderDetails} />
     </OrdersStack.Navigator>

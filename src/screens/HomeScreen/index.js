@@ -8,7 +8,7 @@ export default function HomeScreen() {
   const [restaurants, setRestaurants] = useState([]);
 
   useEffect(() => {
-    DataStore.query(Vendor).then(setRestaurants);
+    DataStore.query(Restaurant).then(setRestaurants);
   }, []);
 
   return (

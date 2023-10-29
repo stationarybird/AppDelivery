@@ -13,7 +13,7 @@ const OrderContextProvider = ({ children }) => {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    DataStore.query(Order, (o) => o.userID("eq", dbUser.id)).then(setOrders);
+    DataStore.query(Order, (o) => o.userID.eq(id)).then(setOrders);
   }, [dbUser]);
 
   const createOrder = async () => {
@@ -44,6 +44,8 @@ const OrderContextProvider = ({ children }) => {
     await DataStore.delete(basket);
 
     setOrders([...orders, newOrder]);
+
+    return newOrder;
   };
 
   const getOrder = async (id) => {
