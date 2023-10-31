@@ -1,4 +1,5 @@
 import { View, Text, Image, FlatList } from "react-native";
+import { useRoute } from "@react-navigation/native";
 import BasketDishItem from "../../components/BasketDishItem";
 
 import orders from "../../../assets/data/orders.json";
@@ -6,30 +7,38 @@ import restaurants from "../../../assets/data/restaurants.json";
 
 import styles from "./styles";
 
-const order = orders[0];
+const OrderDetails = () => {
+  const route = useRoute();
 
-const OrderDetailsHeader = () => {
-  return (
-    <View>
-      <View style={styles.page}>
-        <Image source={{ uri: order.Restaurant.image }} style={styles.image} />
+  const id = route.params?.id;
 
-        <View style={styles.container}>
-          <Text style={styles.title}>{order.Restaurant.name}</Text>
-          <Text style={styles.subtitle}>{order.status} &#8226; 2 days ago</Text>
+  // Find the order with the matching id
+  const order = orders.find((order) => order.id === id);
 
-          <Text style={styles.menuTitle}>Your orders</Text>
+  // Find the restaurant that the order belongs to
+  const restaurant = restaurants.find(restaurant => restaurant.id === order.orderRestaurantId);
+
+  const OrderDetailsHeader = () => {
+    return (
+      <View>
+        <View style={styles.page}>
+          <Image source={{ uri: restaurant.image }} style={styles.image} />
+
+          <View style={styles.container}>
+            <Text style={styles.title}>{restaurant.name}</Text>
+            <Text style={styles.subtitle}>{order.status} • {order.createdAt}</Text>
+
+            <Text style={styles.menuTitle}>Your orders</Text>
+          </View>
         </View>
       </View>
-    </View>
-  );
-};
+    );
+  };
 
-const OrderDetails = () => {
   return (
     <FlatList
       ListHeaderComponent={OrderDetailsHeader}
-      data={restaurants[0].dishes}
+      data={restaurant.dishes}
       renderItem={({ item }) => <BasketDishItem basketDish={item} />}
     />
   );

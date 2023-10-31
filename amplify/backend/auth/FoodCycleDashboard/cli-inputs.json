@@ -3,8 +3,8 @@
   "cognitoConfig": {
     "identityPoolName": "testAuthIdentityPool",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "foodcye392ccfa",
-    "userPoolName": "FoodCycle",
+    "resourceNameTruncated": "foodcy8a065f57",
+    "userPoolName": "FoodCycleDashboard",
     "autoVerifiedAttributes": [
       "email"
     ],
@@ -14,13 +14,14 @@
     ],
     "smsAuthenticationMessage": "Your authentication code is {####}",
     "smsVerificationMessage": "Your verification code is {####}",
-    "emailVerificationSubject": "Verification code for FoodCycle: {####}",
+    "emailVerificationSubject": "Verification code: {####}",
     "emailVerificationMessage": "Verification code: {####}",
     "defaultPasswordPolicy": false,
     "passwordPolicyMinLength": 6,
     "passwordPolicyCharacters": [
       "Requires Lowercase",
-      "Requires Numbers"
+      "Requires Numbers",
+      "Requires Uppercase"
     ],
     "requiredAttributes": [],
     "aliasAttributes": [],
@@ -28,10 +29,10 @@
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [],
     "userpoolClientReadAttributes": [],
-    "userpoolClientLambdaRole": "FoodCye392ccfa_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "FoodCy8a065f57_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "e392ccfa",
-    "resourceName": "FoodCycle",
+    "sharedId": "8a065f57",
+    "resourceName": "FoodCycleDashboard",
     "authSelections": "identityPoolAndUserPool",
     "serviceName": "Cognito",
     "usernameAttributes": [
@@ -44,27 +45,6 @@
     "thirdPartyAuth": false,
     "authProviders": [],
     "usernameCaseSensitive": false,
-    "useEnabledMfas": true,
-    "authRoleArn": {
-      "Fn::GetAtt": [
-        "AuthRole",
-        "Arn"
-      ]
-    },
-    "unauthRoleArn": {
-      "Fn::GetAtt": [
-        "UnauthRole",
-        "Arn"
-      ]
-    },
-    "breakCircularDependency": true,
-    "dependsOn": [],
-    "hostedUI": true,
-    "hostedUIDomainName": "e40wdxdwu48w",
-    "authProvidersUserPool": [
-      "Google"
-    ],
-    "hostedUIProviderMeta": "[{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid profile\",\"AttributeMapping\":{\"username\":\"sub\"}}]",
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"myapp://\"],\"LogoutURLs\":[\"myapp://\"]}"
+    "useEnabledMfas": true
   }
 }

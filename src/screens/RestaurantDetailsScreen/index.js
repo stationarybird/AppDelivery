@@ -6,14 +6,14 @@ import Header from "./Header";
 import styles from "./styles";
 import { useRoute, useNavigation } from "@react-navigation/native";
 
-const restaurant = restaurants[0];
-
 const RestaurantDetailsPage = () => {
   const route = useRoute();
   const navigation = useNavigation();
 
   const id = route.params?.id;
-  console.warn(id);
+  
+  // Find the restaurant with the matching id
+  const restaurant = restaurants.find((restaurant) => restaurant.id === id);
 
   return (
     <View style={styles.page}>

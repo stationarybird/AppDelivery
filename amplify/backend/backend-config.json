@@ -1,6 +1,6 @@
 {
   "auth": {
-    "FoodCycle": {
+    "FoodCycleDashboard": {
       "customAuth": false,
       "dependsOn": [],
       "frontendAuthConfig": {
@@ -11,14 +11,13 @@
         "passwordProtectionSettings": {
           "passwordPolicyCharacters": [
             "REQUIRES_LOWERCASE",
-            "REQUIRES_NUMBERS"
+            "REQUIRES_NUMBERS",
+            "REQUIRES_UPPERCASE"
           ],
           "passwordPolicyMinLength": 6
         },
         "signupAttributes": [],
-        "socialProviders": [
-          "GOOGLE"
-        ],
+        "socialProviders": [],
         "usernameAttributes": [
           "EMAIL"
         ],

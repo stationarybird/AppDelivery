@@ -1,234 +1,147 @@
 [
   {
-  "id": "1",
-  "name": "Whole Foods Market",
-  "deliveryFee": 1.40,
-  "minDeliveryTime": 25,
-  "maxDeliveryTime": 35,
-  "rating": 4.0,
-  "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/uber-eats/restaurant1.jpeg",
-  "dishes": [
-    {
-      "name": "Cheese Tequeños",
-      "description": "6 pieces of chese with sauce.",
-      "price": 6.90,
-      "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/uber-eats/restaurant2.jpeg"
-    },
-    {
-      "name": "Hamburger La Super Cabo Burger",
-      "description": "Double meat, gouda cheese, cheddar cheese, cooked ham, bacon, egg, salad and rustic potatoes.",
-      "price": 8.90,
-      "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/uber-eats/restaurant3.jpeg"
-    },
-    {
-      "name": "U.S.A. Burger",
-      "description": "Beef, gouda cheese, cheddar cheese, cooked ham, bacon, egg and salad.",
-      "price": 5.40
-    },
-    {
-      "name": "Slices of Llanero Cheese",
-      "description": "Ripe plantain with cheese and palm honey.",
-      "price": 5.90
-    },
-    {
-      "name": "Papas Locas El Cabo",
-      "description": "French fries with shredded chicken, gouda cheese and ham.",
-      "price": 7.90
-    }
-  ]
-}, 
-{
-  "id": "2",
-  "name": "JD's Market",
-  "deliveryFee": 0.40,
-  "minDeliveryTime": 25,
-  "maxDeliveryTime": 35,
-  "rating": 4.7,
-  "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/uber-eats/restaurant2.jpeg",
-  "dishes": [
-    {
-      "name": "Cajun Ribs",
-      "description": "For lovers of a spicy touch. Ribs bathed in our Original sauce accompanied by Cajun spices. Served with French fries and coleslaw.",
-      "price": 18.95
-    },
-    {
-      "name": "The Original Baby Backs",
-      "description": "The house specialty. Pork ribs cooked on the barbecue and marinated with our original barbecue sauce. Served with French fries and coleslaw.",
-      "price": 19.95
-    },
-    {
-      "name": "Carolina Honey",
-      "description": "Our famous ribs marinated with our Carolina honey sauce, a mixture of honey with our original sauce. Ideal for those looking for a sweet touch. Served with French fries and coleslaw.",
-      "price": 18.95,
-      "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/uber-eats/restaurant2.jpeg"
-    },
-    {
-      "name": "Onion Rings",
-      "description": "Los tradicionales aros de cebolla de tony roma´s dorados, crujientes y ligeros. Únicos en el mundo, acompañados de salsa BBQ.",
-      "price": 6.95
-    },
-    {
-      "name": "Nachos Tony Roma's",
-      "description": "The best selling nachos! with our blend of melted cheeses, accompanied by guacamole, crispy bacon, ranch beans, and sour cream.",
-      "price": 10.95
-    }
-  ]
-}, {
-  "id": "3",
-  "name": "Central Market",
-  "deliveryFee": 1.40,
-  "minDeliveryTime": 20,
-  "maxDeliveryTime": 30,
-  "rating": 4.3,
-  "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/uber-eats/restaurant3.jpeg",
-  "dishes": [
-    {
-      "name": "Burger Mustang",
-      "description": "Homemade bread, burger sauce, lettuce, sweet and sour pickle, bacon, cheddar and BBQ sauce. Beef 180 grams.",
-      "price": 5.90     
-    },
-    {
-      "name": "Alabama bread",
-      "description": "Artisan bread, butter sauce, garlic, BBQ chicken and cheddar.",
-      "price": 3.00   
-    },
-    {
-      "name": "New York Burger",
-      "description": "Homemade bread, lettuce, burger sauce, 180 grams of beef, goat cheese and roasted apple.",
-      "price": 5.90     
-    },
-    {
-      "name": "Mac & Cheese Burger",
-      "description": "Homemade bread, lettuce, burger sauce, 180 grams of beef, mac and cheese, and American-style bacon.",
-      "price": 5.90     
-    },
-    {
-      "name": "Nachos Brothers",
-      "description": "Nachos, guacamole, cheddar sauce, beans, bacon, and cream cheese.",
-      "price": 5.20     
-    }
-  ]
-}, 
-{
-  "id": "4",
-  "name": "99 Ranch",
-  "deliveryFee": 0.90,
-  "minDeliveryTime": 30,
-  "maxDeliveryTime": 40,
-  "rating": 4.5,
-  "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/uber-eats/restaurant4.jpeg",
-  "dishes": [
-    {
-      "name": "English burger",
-      "description": "Beef with bacon, portobello mushrooms, tomato, cheddar cheese, grilled egg and our smoked sauce.",
-      "price": 14.90     
-    },
-    {
-      "name": "Mexican Burger",
-      "description": "Beef, with pico de gallo, veggie chili, cheddar cheese, guacamole and smoked sauce.",
-      "price": 14.90     
-    },
-    {
-      "name": "Tequeños",
-      "description": "Crispy sticks filled with melted cheese accompanied by tomato chutney.",
-      "price": 9.90    
-    },
-    {
-      "name": "Starters Combo",
-      "description": "Tequeños, crispy onion and chicken delicacies.",
-      "price": 13.90    
-    },
-    {
-      "name": "Cesar Salad",
-      "description": "Green sprouts, pieces of grilled bacon, chicken delicacies, grated Parmesan, muffin croutons and fried onion confetti dressed with Caesar sauce.",
-      "price": 10.50     
-    }
-  ]
-},
-
-{
-  "id": "5",
-  "name": "Man Pasand Supermarket",
-  "deliveryFee": 0.90,
-  "minDeliveryTime": 30,
-  "maxDeliveryTime": 40,
-  "rating": 4.5,
-  "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/uber-eats/restaurant4.jpeg",
-  "dishes": [
-    {
-      "name": "English burger",
-      "description": "Beef with bacon, portobello mushrooms, tomato, cheddar cheese, grilled egg and our smoked sauce.",
-      "price": 14.90     
-    },
-    {
-      "name": "Mexican Burger",
-      "description": "Beef, with pico de gallo, veggie chili, cheddar cheese, guacamole and smoked sauce.",
-      "price": 14.90     
-    },
-    {
-      "name": "Tequeños",
-      "description": "Crispy sticks filled with melted cheese accompanied by tomato chutney.",
-      "price": 9.90    
-    },
-    {
-      "name": "Starters Combo",
-      "description": "Tequeños, crispy onion and chicken delicacies.",
-      "price": 13.90    
-    },
-    {
-      "name": "Cesar Salad",
-      "description": "Green sprouts, pieces of grilled bacon, chicken delicacies, grated Parmesan, muffin croutons and fried onion confetti dressed with Caesar sauce.",
-      "price": 10.50     
-    }
-    
-  ]
-},
-
-
-  {
-    "id": "6",
-    "name": "Whole Foods Market1",
-    "deliveryFee": 1.40,
+    "id": "1",
+    "name": "HEB",
+    "deliveryFee": 2.50,
     "minDeliveryTime": 25,
     "maxDeliveryTime": 35,
-    "rating": 4.0,
-    "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/uber-eats/restaurant1.jpeg",
+    "rating": 4.5,
+    "image": "https://newsroom.heb.com/wp-content/uploads/2021/10/BSP_3674-scaled.jpg",
     "dishes": [
       {
-        "name": "Organic Green Lentils",
-        "description": "Aurora Products Organic Green Lentils, 22 OZ.",
-        "price": 12.99
+        "id": 1,
+        "name": "Organic Produce",
+        "description": "A selection of seasonal, organic fruits and vegetables, hand-picked by HEB, making it easy to create healthy, delicious meals.",
+        "price": 3.00
       },
       {
-        "name": "Organic Sugar",
-        "description": "365 By Whole Foods Market, Organic Sugar, 32 Ounce.",
-        "price": 5.49
+        "id": 2,
+        "name": "Breads",
+        "description": "A variety of freshly baked, artisanal bread, perfect for sandwiches, toasting, or serving with your favorite spreads.",
+        "price": 2.50
       },
       {
-        "name": "Organic Buffalo Wing Sauce",
-        "description": "365 By Whole Foods Market Organic Buffalo Wing Sauce, 12 Ounce.",
-        "price": 6.41
+        "id": 3,
+        "name": "Dairy",
+        "description": "A range of premium dairy products including organic milk, yogurt, and cheese sourced from local farms.",
+        "price": 2.50
       }
     ]
   },
   {
-    "id": "7",
-    "name": "Man Pasand Supermarket2",
-    "deliveryFee": 0.40,
-    "minDeliveryTime": 25,
-    "maxDeliveryTime": 35,
-    "rating": 4.7,
-    "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/uber-eats/restaurant2.jpeg",
+    "id": "2",
+    "name": "Torchy's Tacos",
+    "deliveryFee": 2.00,
+    "minDeliveryTime": 20,
+    "maxDeliveryTime": 30,
+    "rating": 4.2,
+    "image": "https://images.adsttc.com/media/images/56b4/93d2/e58e/cee7/e100/0a77/newsletter/Torchy'sSoCo-08.jpg?1454674891",
     "dishes": [
       {
-        "name": "Cajun Ribs",
-        "description": "",
-        "price": 18.95
+        "id": "4",
+        "name": "Torchy's Taco Kit",
+        "description": "Everything you need to recreate Torchy's famous Trailer Park taco at home, including tortillas, fried chicken, lettuce, pico de gallo, and Torchy's signature queso.",
+        "price": 3.00
       },
       {
-        "name": "",
-        "description": "",
-        "price": null
+        "id": "5",
+        "name": "Chips Etc.",
+        "description": "A container of Torchy's famous green chile queso with a side of crispy tortilla chips.",
+        "price": 2.00
+      },
+      {
+        "id": "6",
+        "name": "Dinner Shrimp Kit",
+        "description": "A kit with all the ingredients to make Baja shrimp tacos, including seasoned shrimp, slaw, and avocado salsa.",
+        "price": 2.50
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "name": "Ranch 99",
+    "deliveryFee": 1.50,
+    "minDeliveryTime": 20,
+    "maxDeliveryTime": 30,
+    "rating": 4.3,
+    "image": "https://4.bp.blogspot.com/-XBPEhgClmJs/WqZre_6dYCI/AAAAAAAAP24/QyTTDVPRbesocz_cLn7G0BVmVpCyXFIBwCLcBGAs/s1600/DSCF3800.jpg",
+    "dishes": [
+      {
+        "id": "7",
+        "name": "Italian Pack",
+        "description": "A package featuring a selection of pasta, extra-virgin olive oil, and imported Italian sauces.",
+        "price": 2.50
+      },
+      {
+        "id": "8",
+        "name": "Mexican Pack",
+        "description": "Enjoy the flavors of Mexico with a kit containing tortillas, fresh salsa, and marinated grilled meats.",
+        "price": 2.00
+      },
+      {
+        "id": "9",
+        "name": "Japanese Pack",
+        "description": "A combination of sushi rolls, sashimi, and dipping sauces for a delightful Japanese dining experience at home.",
+        "price": 3.00
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "name": "Tous Les Jours",
+    "deliveryFee": 1.00,
+    "minDeliveryTime": 15,
+    "maxDeliveryTime": 25,
+    "rating": 4.6,
+    "image": "https://www.thetexastasty.com/wp-content/uploads/2022/04/tous-les-jours-bakery-in-austin.webp",
+    "dishes": [
+      {
+        "id": "10",
+        "name": "Croissant Box",
+        "description": "A selection of freshly baked croissants, both plain and filled with almond paste or chocolate.",
+        "price": 3.00
+      },
+      {
+        "id": "11",
+        "name": "Dessert Sampler",
+        "description": "An assortment of gourmet pastries and desserts, including eclairs, fruit tarts, and chocolate mousse.",
+        "price": 2.50
+      },
+      {
+        "id": "12",
+        "name": "Sourdough Loafs",
+        "description": "A freshly baked, crusty sourdough bread loaf, perfect for sandwiches or toasting.",
+        "price": 2.50
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "name": "Whole Foods Market",
+    "deliveryFee": 1.40,
+    "minDeliveryTime": 25,
+    "maxDeliveryTime": 35,
+    "rating": 4.0,
+    "image": "https://assets.simpleviewinc.com/simpleview/image/upload/c_limit,q_75,w_1200/v1/crm/austin/Lamar_exterior_Photo-Credit-Whole-Foods-Market-_Full-Usage-Permissions-5ab7e5ffda189c6_5ab7e710-a2a4-b763-39d72a86249022fe.jpg",
+    "dishes": [
+      {
+        "id": "13",
+        "name": "Seasonal Fruits",
+        "description": "A selection of locally grown, in-season fruits such as apples, peaches, and berries.",
+        
+        "price": 2.50
+      },
+      {
+        "id": "14",
+        "name": "Honey and Jams",
+        "description": "A pairing of small-batch, local honey and homemade fruit jam.",
+        "price": 3.00
+      },
+      {
+        "id": "15",
+        "name": "Organic Produce",
+        "description": "A selection of seasonal, organic fruits and vegetables, hand-picked by HEB, making it easy to create healthy, delicious meals.",
+        "price": 2.50
       }
     ]
   }

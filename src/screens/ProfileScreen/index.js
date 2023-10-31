@@ -1,54 +1,55 @@
-import { View, Text, TextInput, StyleSheet, Button, Pressable } from "react-native";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import {
+  View,
+  Text,
+  TextInput,
+  StyleSheet,
+  Button,
+  Pressable,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import {Auth} from "aws-amplify";
-const Profile = () => {
-  const [name, setName] = useState("");
+import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
+import { Auth } from "aws-amplify";
+
+const ProfileScreen = ({navigation}) => {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [address, setAddress] = useState("");
   const [lat, setLat] = useState("0");
   const [lng, setLng] = useState("0");
 
-  const onSave = () => {};
+  const onSave = () => {
+    // Implement your save logic here
+    navigation.navigate("Home");
+  };
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <Text style={styles.title}>Profile</Text>
       <TextInput
-        value={name}
-        onChangeText={setName}
-        placeholder="Name"
+        value={firstName}
+        onChangeText={setFirstName}
+        placeholder="First Name"
         style={styles.input}
       />
+      <TextInput
+        value={lastName}
+        onChangeText={setLastName}
+        placeholder="Last Name"
+        style={styles.input}
+      />
+      
       <TextInput
         value={address}
         onChangeText={setAddress}
         placeholder="Address"
         style={styles.input}
       />
-      <TextInput
-        value={lat}
-        onChangeText={setLat}
-        placeholder="Latitude"
-        style={styles.input}
-        keyboardType="numeric"
-      />
-      <TextInput
-        value={lng}
-        onChangeText={setLng}
-        placeholder="Longitude"
-        style={styles.input}
-      />
-      <Button onPress={onSave} title="Save" style={{ margin: 10 }} />
 
-      <Pressable style={styles.button} onPress={() => signOut()}>
-      <Text
-        onPress={() => Auth.signOut()}
-        style={styles.buttonText}
-      >
-        Sign Out
-      </Text>
-        </Pressable>
-      
+      <Button style = {styles.button} onPress={onSave} title="Save" color="#32CD32" />
+      <Pressable style={styles.button} onPress={() => Auth.signOut()}>
+        <Text style={styles.buttonText}>Sign Out</Text>
+      </Pressable>
     </SafeAreaView>
   );
 };
@@ -79,4 +80,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Profile;
+export default ProfileScreen;

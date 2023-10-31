@@ -3,90 +3,78 @@
     "id": "1",
     "userID": "9b09b087-cf40-41f4-a375-8dc75843a8d1",
     "status": "NEW",
-    "createdAt": "2022-04-16T18:56:21.890Z",
-    "updatedAt": "2022-04-16T18:56:21.890Z",
-    "orderRestaurantId": "7d7965f7-1b33-4b8c-9bac-0c22bc905030",
+    "createdAt": "2 days ago",
+    "updatedAt": "2 days ago",
+    "orderRestaurantId": "1",
     "Restaurant": {
-      "id": "7d7965f7-1b33-4b8c-9bac-0c22bc905030",
-      "name": "El Cabo Coffe Bar Tres De Mayo",
-      "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/uber-eats/restaurant1.jpeg",
-      "deliveryFee": 0.039448871531492236,
-      "minDeliveryTime": 10,
-      "maxDeliveryTime": 44,
-      "rating": 1.5095123177204128,
-      "address": "983 Lewis Rapids",
-      "lat": 46.87190499528364,
-      "lng": 28.54937769418778,
-      "createdAt": "2022-04-16T12:03:33.225Z",
-      "updatedAt": "2022-04-16T12:05:12.826Z"
+      "id": "1",
+      "name": "HEB",
+      "image": "https://newsroom.heb.com/wp-content/uploads/2021/10/BSP_3674-scaled.jpg",
+      "deliveryFee": 2.50,
+      "minDeliveryTime": 25,
+      "maxDeliveryTime": 35,
+      "rating": 4.5,
+      "address": "2652 Lake Austin Blvd, Austin, TX 78703",
+      "lat": 30.240377,
+      "lng": -97.728165
     },
     "User": {
       "id": "1",
       "name": "Vadim",
-      "address": "Abc 1",
-      "lat": 46.86190499528364,
-      "lng": 28.54437769418778
+      "address": "Abc 1"
     }
   },
   {
     "id": "2",
     "userID": "9b09b087-cf40-41f4-a375-8dc75843a8d1",
     "status": "NEW",
-    "createdAt": "2022-04-16T18:53:32.261Z",
-    "updatedAt": "2022-04-16T18:53:32.261Z",
-    "orderRestaurantId": "7d7965f7-1b33-4b8c-9bac-0c22bc905030",
+    "createdAt": "2 days ago",
+    "updatedAt": "2 days ago",
+    "orderRestaurantId": "2",
     "Restaurant": {
-      "id": "7d7965f7-1b33-4b8c-9bac-0c22bc905030",
-      "name": "Jacobs - DuBuque",
-      "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/uber-eats/restaurant1.jpeg",
-      "deliveryFee": 0.039448871531492236,
-      "minDeliveryTime": 10,
-      "maxDeliveryTime": 44,
-      "rating": 1.5095123177204128,
-      "address": "983 Lewis Rapids",
-      "lat": 46.87190499528364,
-      "lng": 28.54937769418778,
-      "createdAt": "2022-04-16T12:03:33.225Z",
-      "updatedAt": "2022-04-16T12:05:12.826Z"
+      "id": "2",
+      "name": "Torchy's Tacos",
+      "image": "https://images.adsttc.com/media/images/56b4/93d2/e58e/cee7/e100/0a77/newsletter/Torchy'sSoCo-08.jpg?1454674891",
+      "deliveryFee": 2.00,
+      "minDeliveryTime": 20,
+      "maxDeliveryTime": 30,
+      "rating": 4.2,
+      "address": "1311 S 1st St, Austin, TX 78704",
+      "lat": 30.250748,
+      "lng": -97.754786
     },
     "User": {
-      "id": "2",
-      "name": "Lukas",
-      "address": "Lithuania 1",
-      "lat": 46.86110499528364,
-      "lng": 28.54497769418778
+        "id": "2",
+        "name": "Lukas",
+        "address": "Lithuania 1"
     }
   },
   {
-    "id": "3",
+    "id": "4",
     "userID": "9b09b087-cf40-41f4-a375-8dc75843a8d1",
     "status": "NEW",
-    "createdAt": "2022-04-16T18:56:49.713Z",
-    "updatedAt": "2022-04-16T18:56:49.713Z",
-    "orderRestaurantId": "7d7965f7-1b33-4b8c-9bac-0c22bc905030",
+    "createdAt": "Just Now",
+    "updatedAt": "Just Now",
+    "orderRestaurantId": "4",
     "_version": 1,
     "_lastChangedAt": 1650135409734,
     "_deleted": null,
     "Restaurant": {
-      "id": "7d7965f7-1b33-4b8c-9bac-0c22bc905030",
-      "name": "Jacobs - DuBuque",
-      "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/uber-eats/restaurant1.jpeg",
-      "deliveryFee": 0.039448871531492236,
-      "minDeliveryTime": 10,
-      "maxDeliveryTime": 44,
-      "rating": 1.5095123177204128,
-      "address": "983 Lewis Rapids",
-      "lat": 46.87190499528364,
-      "lng": 28.54937769418778,
-      "createdAt": "2022-04-16T12:03:33.225Z",
-      "updatedAt": "2022-04-16T12:05:12.826Z"
-    },
-    "User": {
-      "id": "3",
-      "name": "Alex",
-      "address": "Happy land",
-      "lat": 46.86133499528364,
-      "lng": 28.54421769418778
-    }
-  }
+        "id": "4",
+        "name": "Tous Les Jours",
+        "image": "https://www.thetexastasty.com/wp-content/uploads/2022/04/tous-les-jours-bakery-in-austin.webp",
+        "deliveryFee": 2.00,
+        "minDeliveryTime": 20,
+        "maxDeliveryTime": 30,
+        "rating": 4.2,
+        "address": "6808 N Lamar Blvd B110, Austin, TX 78752",
+        "lat": 30.335398,
+        "lng": -97.718765
+     },
+     "User": {
+         "id": "3",
+         "name": "Alex",
+         "address": "Happy land"
+     }
+   }
 ]

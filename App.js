@@ -1,6 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View, useColorScheme } from "react-native";
 import RootNavigator from "./src/navigation";
+import { BasketProvider } from "./src/contexts/BasketProvider";
 import { Amplify, Auth } from "aws-amplify";
 import {
   withAuthenticator,
@@ -68,7 +69,9 @@ function App() {
           formFields={formFields}
         >
           <NavigationContainer>
-            <RootNavigator />
+            <BasketProvider>
+              <RootNavigator />
+            </BasketProvider>
 
             <StatusBar style="light" />
           </NavigationContainer>
